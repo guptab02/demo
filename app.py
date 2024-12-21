@@ -26,23 +26,19 @@ duration = st.number_input("Video duration:", min_value=1)
 category = st.selectbox("Select Category:", ["Comedy", "Fitness", "Music", "Travel", "Electronics", "Movie", "Vlog", "Fashion"])
 
 
-
-
 # Prepare input data for prediction
 if st.button("Predict AdViews"):      
     # Create a dataframe with input features    
-	input_data = {
-	    "views": [views],
-	    "likes": [likes],
-	    "dislikes": [dislikes],
-	    "comment": [comment],
-	    "duration" : [duration],
-	    "category" : [category]
+    input_data = {
+    "views": [views],
+    "likes": [likes],
+    "dislikes": [dislikes],
+    "comment": [comment],
+    "duration" : [duration],
+    "category" : [category]
 	}
-
-	input_data = pd.DataFrame([input_data])
-    
-   
+    input_data = pd.DataFrame([input_data])
+       
     # Perform prediction
     try:
         prediction = model.predict(input_data)
