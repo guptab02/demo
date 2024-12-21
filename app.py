@@ -56,8 +56,24 @@ if st.button("Predict AdViews"):
 	
     input_data = pd.DataFrame([input_data])
     
-    category={'Fitness': 1,'Music':2,'Travel':3,'Electronics':4,'Movie':5,'Fashion':6,'Vlog':7,'Comedy':8}
-    input_data["category"] = input_data["category"].map(category)
+    #category={'Fitness': 1,'Music':2,'Travel':3,'Electronics':4,'Movie':5,'Fashion':6,'Vlog':7,'Comedy':8}
+    #input_data["category"] = input_data["category"].map(category)
+    # Define conditions and choices for np.select
+    conditions = [
+    input_data["category"] == 'Fitness',
+    input_data["category"] == 'Music',
+    input_data["category"] == 'Travel',
+    input_data["category"] == 'Electronics',
+    input_data["category"] == 'Movie',
+    input_data["category"] == 'Fashion',
+    input_data["category"] == 'Vlog',
+    input_data["category"] == 'Comedy'
+    ]
+	
+    choices = [1, 2, 3, 4, 5, 6, 7, 8]
+
+    # Update the "category" column
+    input_data["category"] = np.select(conditions, choices, default=0)	
 	
        
     # Perform prediction
