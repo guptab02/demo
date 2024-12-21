@@ -74,7 +74,7 @@ if st.button("Predict AdViews"):
 
     # Update the "category" column
     input_data["category"] = np.select(conditions, choices, default=0)	
-	
+    print(input_data)
        
     # Perform prediction
     try:
