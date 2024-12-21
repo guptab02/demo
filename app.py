@@ -58,6 +58,7 @@ if st.button("Predict AdViews"):
     
     #category={'Fitness': 1,'Music':2,'Travel':3,'Electronics':4,'Movie':5,'Fashion':6,'Vlog':7,'Comedy':8}
     #input_data["category"] = input_data["category"].map(category)
+	
     # Define conditions and choices for np.select
     conditions = [
     input_data["category"] == 'Fitness',
@@ -73,7 +74,7 @@ if st.button("Predict AdViews"):
     choices = [1, 2, 3, 4, 5, 6, 7, 8]
 
     # Update the "category" column
-    input_data["category"] = np.select(conditions, choices, default=0)	
+    input_data["category"] = np.select(conditions, choices, default=0)
     print(input_data)
        
     # Perform prediction
