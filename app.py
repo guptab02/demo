@@ -1,5 +1,5 @@
 import streamlit as st
-import pickle
+import joblib
 import pandas as pd
 import numpy as np
 import datetime
@@ -13,7 +13,6 @@ from sklearn.linear_model import LinearRegression
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
-import pickle
 
 
 
@@ -25,7 +24,7 @@ warnings.filterwarnings("ignore")
 
 # Load the ML model
 with open("decisiontree_youtubeadview.pkl", "rb") as file:
-    model = pickle.load(file)
+    model = joblib.load(file)
 
 # Streamlit app title
 st.title("ML Model Prediction App")
