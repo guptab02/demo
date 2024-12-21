@@ -24,7 +24,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 # Load the ML model
-with open("decisiontree_youtubeadview.pkl", "rb") as file:
+with open("./decisiontree_youtubeadview.pkl", "rb") as file:
     model = pickle.load(file)
 
 # Streamlit app title
