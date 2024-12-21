@@ -55,6 +55,9 @@ if st.button("Predict AdViews"):
     "category" : [category]
 	}
     input_data = pd.DataFrame([input_data])
+    category={'Fitness': 1,'Music':2,'Travel':3,'Electronics':4,'Movie':5,'Fashion':6,'Vlog':7,'Comedy':8}
+    input_df["category"]=input_df["category"].map(category)
+	
        
     # Perform prediction
     try:
